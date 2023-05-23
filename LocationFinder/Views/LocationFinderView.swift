@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct LocationFinderView: View {
+    @StateObject var locationService = LocationService()
+    @State private var selectedCountry = Country.none
+    
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Hello, world!")
+                Picker("Select Country", selection: $selectedCountry) {
+                    ForEach(locationService.countries, id: \.code) { country in
+                        Text(country.name).tag(country)
+                    }
+                }
             }
             .navigationTitle("LocationFinder")
         }
