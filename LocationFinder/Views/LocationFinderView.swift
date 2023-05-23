@@ -19,6 +19,8 @@ struct LocationFinderView: View {
                         Text(country.name).tag(country)
                     }
                 }
+                .buttonStyle(.bordered)
+                Spacer()
             }
             .navigationTitle("LocationFinder")
         }
