@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LocationFinderView: View {
     @StateObject var locationService = LocationService()
+    @State private var code = ""
     @State private var selectedCountry = Country.none
     
     var body: some View {
@@ -20,6 +21,20 @@ struct LocationFinderView: View {
                     }
                 }
                 .buttonStyle(.bordered)
+                if selectedCountry != .none {
+                    Text(selectedCountry.range)
+                    Text("Postal Code/Zip Range")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    TextField("Code", text: $code)
+                        .textFieldStyle(.roundedBorder)
+                        .frame(width: 100)
+                    Button("Get Location") {
+                        
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .disabled(code.isEmpty)
+                }
                 Spacer()
             }
             .navigationTitle("LocationFinder")
