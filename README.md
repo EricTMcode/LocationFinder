@@ -12,3 +12,10 @@ An application that sends a postal or zip code to an external API for a selected
 
 Using Zippopotam.us API
 https://www.zippopotam.us
+
+## Screenshots
+
+<div>
+  <img src="Screenshots/screen-1.png" width="250">
+  <img src="Screenshots/screen-2.png" width="250">
+</div>
