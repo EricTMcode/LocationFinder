@@ -12,11 +12,13 @@ struct Location: Codable {
     struct Place: Codable {
         var placeName: String
         var longitude: String
+        var state: String
         var latitude: String
         
         enum CodingKeys: String, CodingKey {
             case placeName = "place name"
             case longitude
+            case state
             case latitude
         }
     }

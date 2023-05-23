@@ -15,6 +15,7 @@
 		07D7EB6E2A1CDEF700DFECC5 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 07D7EB6D2A1CDEF700DFECC5 /* Countries.json */; };
 		07D7EB702A1CDF7500DFECC5 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7EB6F2A1CDF7500DFECC5 /* Country.swift */; };
 		07D7EB732A1CDFD100DFECC5 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7EB722A1CDFD100DFECC5 /* LocationService.swift */; };
+		07D7EB762A1CE9A600DFECC5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7EB752A1CE9A600DFECC5 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		07D7EB6D2A1CDEF700DFECC5 /* Countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
 		07D7EB6F2A1CDF7500DFECC5 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		07D7EB722A1CDFD100DFECC5 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		07D7EB752A1CE9A600DFECC5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +62,10 @@
 			isa = PBXGroup;
 			children = (
 				07D7EB5B2A1CDC3A00DFECC5 /* LocationFinderApp.swift */,
-				07D7EB712A1CDFC400DFECC5 /* Service */,
 				07D7EB6A2A1CDD8A00DFECC5 /* Views */,
 				07D7EB692A1CDD8500DFECC5 /* Models */,
-				07D7EB6D2A1CDEF700DFECC5 /* Countries.json */,
+				07D7EB712A1CDFC400DFECC5 /* Service */,
+				07D7EB742A1CE83700DFECC5 /* Data */,
 				07D7EB5F2A1CDC3B00DFECC5 /* Assets.xcassets */,
 				07D7EB612A1CDC3B00DFECC5 /* Preview Content */,
 			);
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				07D7EB5D2A1CDC3A00DFECC5 /* LocationFinderView.swift */,
+				07D7EB752A1CE9A600DFECC5 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -101,6 +104,14 @@
 				07D7EB722A1CDFD100DFECC5 /* LocationService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		07D7EB742A1CE83700DFECC5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				07D7EB6D2A1CDEF700DFECC5 /* Countries.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D7EB702A1CDF7500DFECC5 /* Country.swift in Sources */,
+				07D7EB762A1CE9A600DFECC5 /* MapView.swift in Sources */,
 				07D7EB5E2A1CDC3A00DFECC5 /* LocationFinderView.swift in Sources */,
 				07D7EB732A1CDFD100DFECC5 /* LocationService.swift in Sources */,
 				07D7EB6C2A1CDD9B00DFECC5 /* Location.swift in Sources */,

@@ -13,6 +13,7 @@ class LocationService: ObservableObject {
     
     struct LocationInfo {
         let placeName: String
+        let state: String
         let longitude: Double
         let latitude: Double
     }
@@ -54,7 +55,7 @@ class LocationService: ObservableObject {
             let (data, _) = try await URLSession.shared.data(from: url)
             let location = try JSONDecoder().decode(Location.self, from: data)
             if let place = location.places.first {
-                locationInfo = LocationInfo(placeName: place.placeName, longitude: Double(place.longitude) ?? 0, latitude: Double(place.latitude) ?? 0)
+                locationInfo = LocationInfo(placeName: place.placeName, state: place.state, longitude: Double(place.longitude) ?? 0, latitude: Double(place.latitude) ?? 0)
             }
         } catch {
             errorString = "Could not decode returned result."

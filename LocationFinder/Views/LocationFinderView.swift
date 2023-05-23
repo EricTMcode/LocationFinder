@@ -30,14 +30,31 @@ struct LocationFinderView: View {
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 100)
                     Button("Get Location") {
-                        
+                        Task {
+                            await locationService.fetchLocation(for: selectedCountry.code, postalCode: code)
+                        }
                     }
                     .buttonStyle(.borderedProminent)
                     .disabled(code.isEmpty)
+                    if let errorString = locationService.errorString {
+                        Text(errorString)
+                            .foregroundColor(.red)
+                    }
+                    if let locationInfo = locationService.locationInfo {
+                        Text(locationInfo.placeName)
+                        Text(locationInfo.state)
+                    }
+                }
+                if locationService.locationInfo == nil {
+                    Image("locationFinder")
                 }
                 Spacer()
             }
             .navigationTitle("LocationFinder")
+            .onChange(of: selectedCountry) { _ in
+                locationService.reset()
+                code = ""
+            }
         }
     }
 }
