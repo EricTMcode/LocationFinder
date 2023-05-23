@@ -55,7 +55,14 @@ class LocationService: ObservableObject {
             let (data, _) = try await URLSession.shared.data(from: url)
             let location = try JSONDecoder().decode(Location.self, from: data)
             if let place = location.places.first {
-                locationInfo = LocationInfo(placeName: place.placeName, state: place.state, longitude: Double(place.longitude) ?? 0, latitude: Double(place.latitude) ?? 0)
+                locationInfo = LocationInfo(placeName: place.placeName,
+                                            state: place.state,
+                                            longitude: Double(place.longitude) ?? 0,
+                                            latitude: Double(place.latitude) ?? 0)
+                let range = -180.0...180.0
+                if !(range.contains(locationInfo!.latitude) && range.contains(locationInfo!.longitude)) {
+                    errorString = "Invalid map coordinates"
+                }
             }
         } catch {
             errorString = "Could not decode returned result."
