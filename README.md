@@ -10,3 +10,5 @@ An application that sends a postal or zip code to an external API for a selected
 - Async and Await - Swift concurrency
 - MapKit
 
+Using Zippopotam.us API
+https://www.zippopotam.us
