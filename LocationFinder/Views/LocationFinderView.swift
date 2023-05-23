@@ -43,6 +43,8 @@ struct LocationFinderView: View {
                     if let locationInfo = locationService.locationInfo {
                         Text(locationInfo.placeName)
                         Text(locationInfo.state)
+                        MapView(latitude: locationInfo.latitude, longitude: locationInfo.longitude)
+                            .padding()
                     }
                 }
                 if locationService.locationInfo == nil {
